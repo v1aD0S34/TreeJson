@@ -3,7 +3,7 @@ import json
 
 from Models.DataSettings import ExcelSettings
 
-
+# Создать массив с настройками по каждому листу
 def ReadSettingsExcel():
     excel_settings_array = []
     with open('config.json') as json_file:
