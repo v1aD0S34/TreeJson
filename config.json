@@ -1,0 +1,25 @@
+{
+  "prefix": "GVL",
+  "excel_settings": [
+    {
+      "Name": "AI",
+      "ExcelSheet": "AI1",
+      "TreePath": "AI\\",
+      "Tag": "R",
+      "Unit": "I",
+      "Description": "F",
+      "Postfix": "AI_ToHMI.PV",
+      "StartCount": 2
+    },
+    {
+      "Name": "AO",
+      "ExcelSheet": "AO1",
+      "TreePath": "AO\\",
+      "Tag": "P",
+      "Unit": "I",
+      "Description": "F",
+      "Postfix": "AO_ToHMI.PV",
+      "StartCount": 2
+    }
+  ]
+}
