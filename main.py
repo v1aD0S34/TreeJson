@@ -1,9 +1,12 @@
-from jsonCreate import create_json_file
+from jsonSector import create_json_file, ReadSettingsExcel
 from Models.Signal import Signal
 
 
 def main():
-
+    settings = ReadSettingsExcel()
+    for setting in settings:
+        print(vars(setting))
+    print(len(settings))
 
 
     UserTree = [
