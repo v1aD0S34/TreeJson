@@ -22,15 +22,34 @@
       "Postfix": "AO_ToHMI.PV",
       "StartCount": 4
     },
-
-      {
+    {
       "Name": "DI",
       "ExcelSheet": "DI1",
       "TreePath": "DI\\",
       "Tag": "M",
-      "Unit": "L",
+      "Unit": "Z",
       "Description": "F",
       "Postfix": "DI_ToHMI.PV",
+      "StartCount": 4
+    },
+    {
+      "Name": "DO",
+      "ExcelSheet": "DO1",
+      "TreePath": "DO\\",
+      "Tag": "L",
+      "Unit": "Z",
+      "Description": "F",
+      "Postfix": "DO_ToHMI.PV",
+      "StartCount": 4
+    },
+    {
+      "Name": "AI",
+      "ExcelSheet": "FI1",
+      "TreePath": "AI\\FI\\",
+      "Tag": "R",
+      "Unit": "K",
+      "Description": "F",
+      "Postfix": "AI_ToHMI.PV",
       "StartCount": 4
     }
   ]

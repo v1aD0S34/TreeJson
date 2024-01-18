@@ -5,6 +5,7 @@ from Models.DataSettings import ExcelSettings
 from _publicConst import Const
 
 
+# Создаем файл Json  в выходной папке
 def create_json_file(signals):
     data = {"UserTree": [{"Signal": vars(signal)} for signal in signals]}
     output_folder = os.path.join(os.getcwd(), Const.OUTPUT_FOLDER)
@@ -20,7 +21,7 @@ def create_json_file(signals):
 
 
 # Создать массив с настройками по каждому листу
-def ReadSettingsExcel():
+def read_settings():
     excel_settings_array = []
     with open(Const.FILE_PATH + Const.CONFIG_NAME, encoding='utf-8') as json_file:
         data = json.load(json_file)
@@ -40,8 +41,3 @@ def ReadSettingsExcel():
             excel_settings_array.append(excel_setting)
 
     return excel_settings_array
-
-# def create_json_file(signals):
-#     data = {"UserTree": [{"Signal": vars(signal)} for signal in signals]}
-#     with open('tree.json', 'w', encoding='utf-8') as json_file:
-#         json.dump(data, json_file, ensure_ascii=False, indent=2)
