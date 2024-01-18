@@ -10,7 +10,7 @@
       "Unit": "I",
       "Description": "F",
       "Postfix": "AI_ToHMI.PV",
-      "StartCount": 2
+      "StartCount": 4
     },
     {
       "Name": "AO",
@@ -20,7 +20,18 @@
       "Unit": "I",
       "Description": "F",
       "Postfix": "AO_ToHMI.PV",
-      "StartCount": 2
+      "StartCount": 4
+    },
+
+      {
+      "Name": "DI",
+      "ExcelSheet": "DI1",
+      "TreePath": "DI\\",
+      "Tag": "M",
+      "Unit": "L",
+      "Description": "F",
+      "Postfix": "DI_ToHMI.PV",
+      "StartCount": 4
     }
   ]
 }
