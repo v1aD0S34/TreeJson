@@ -25,7 +25,7 @@ def read_settings():
     excel_settings_array = []
     with open(Const.FILE_PATH + Const.CONFIG_NAME, encoding='utf-8') as json_file:
         data = json.load(json_file)
-        excel_settings_list = data["excel_settings"]
+        excel_settings_list = data["excel_settings_IO"]
         for setting in excel_settings_list:
             excel_setting = ExcelSettings(
                 setting["Name"],
@@ -34,8 +34,8 @@ def read_settings():
                 setting["Tag"],
                 setting["Unit"],
                 setting["Description"],
-                data["prefix"],
-                setting['Postfix'],
+                data["prefix_Alpha"],
+                setting["Postfix_Alpha"],
                 setting["StartCount"]
             )
             excel_settings_array.append(excel_setting)

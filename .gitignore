@@ -162,5 +162,10 @@ cython_debug/
 # Игнорировать папку .idea
 .idea/
 
+# Игнорировать входной эксель
+Input/*.xlsx
+Input/*.xlsm
+
+
 
 

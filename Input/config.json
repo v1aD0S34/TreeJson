@@ -1,7 +1,7 @@
 {
-  "nameFileTable": "IO_alpha_CONFIGURATOR_v6.xlsm",
-  "prefix": "GVL",
-  "excel_settings": [
+  "nameFile_IO": "IO_alpha_CONFIGURATOR_v6.xlsm",
+  "prefix_Alpha": "GVL",
+  "excel_settings_IO": [
     {
       "Name": "AI",
       "ExcelSheet": "AI1",
@@ -9,7 +9,7 @@
       "Tag": "R",
       "Unit": "I",
       "Description": "F",
-      "Postfix": "AI_ToHMI.PV",
+      "Postfix_Alpha": "AI_ToHMI.PV",
       "StartCount": 4
     },
     {
@@ -19,7 +19,7 @@
       "Tag": "P",
       "Unit": "I",
       "Description": "F",
-      "Postfix": "AO_ToHMI.PV",
+      "Postfix_Alpha": "AO_ToHMI.PV",
       "StartCount": 4
     },
     {
@@ -29,7 +29,7 @@
       "Tag": "M",
       "Unit": "Z",
       "Description": "F",
-      "Postfix": "DI_ToHMI.PV",
+      "Postfix_Alpha": "DI_ToHMI.PV",
       "StartCount": 4
     },
     {
@@ -39,7 +39,7 @@
       "Tag": "L",
       "Unit": "Z",
       "Description": "F",
-      "Postfix": "DO_ToHMI.PV",
+      "Postfix_Alpha": "DO_ToHMI.PV",
       "StartCount": 4
     },
     {
@@ -49,8 +49,14 @@
       "Tag": "R",
       "Unit": "K",
       "Description": "F",
-      "Postfix": "AI_ToHMI.PV",
+      "Postfix_Alpha": "AI_ToHMI.PV",
       "StartCount": 4
     }
-  ]
+  ],
+
+  "nameFile_OpcMap": "OpcMap.xlsx",
+  "binding_OpcMap": "непосредственно",
+  "addressSpace_OpcMap": "urn:ProsoftSystems:regul_ua_server:iec_data",
+  "typeId_OpcMap": "Строковый",
+  "prefix_Regul": "Application.algGVL"
 }
