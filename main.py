@@ -11,7 +11,8 @@ if __name__ == "__main__":
     except Exception as e:
         print("ОШИБКА: генерация трендов провалилась:", e)
 
-    try:
-        process_excel_file()
-    except Exception as e:
-        print("ОШИБКА: генерация OPC провалилась:", e)
+    process_excel_file()
+    # try:
+    #     process_excel_file()
+    # except Exception as e:
+    #     print("ОШИБКА: генерация OPC провалилась:", e)
