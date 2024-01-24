@@ -166,6 +166,8 @@ cython_debug/
 Input/*.xlsx
 Input/*.xlsm
 
+# Игнорировать папку Output
+Output/
 
 
 
