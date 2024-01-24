@@ -5,7 +5,7 @@ from Models.DataSettings import ExcelSettings
 from _publicConst import Const
 
 
-# Создаем файл Json  в выходной папке
+# Создаем файл Json  в выходной папке для трендов
 def create_json_file(signals):
     data = {"UserTree": [{"Signal": vars(signal)} for signal in signals]}
     output_folder = os.path.join(os.getcwd(), Const.OUTPUT_FOLDER)
@@ -20,7 +20,7 @@ def create_json_file(signals):
         print("Возникла проблема при создании файла")
 
 
-# Создать массив с настройками по каждому листу
+# Создать массив с настройками по каждому листу из Config.json для трендов
 def read_settings():
     excel_settings_array = []
     with open(Const.FILE_PATH + Const.CONFIG_NAME, encoding='utf-8') as json_file:
@@ -41,3 +41,15 @@ def read_settings():
             excel_settings_array.append(excel_setting)
 
     return excel_settings_array
+
+
+# Вернуть значения из config.json по названию ключа
+def get_data_from_config(data):
+    try:
+        with open(Const.FILE_PATH + Const.CONFIG_NAME, 'r' , encoding='utf-8') as config_file:
+            config_content = config_file.read()
+            config_dict = json.loads(config_content)
+        return config_dict[data]
+    except FileNotFoundError:
+        print(f"ОШИБКА: Файл {Const.CONFIG_NAME} не найден в директории {Const.FILE_PATH} !")
+        return None
