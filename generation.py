@@ -10,7 +10,7 @@ def generateTrends():
         UserTree = read_and_save_signals(excelSettings, Const.FILE_PATH + EXCEL_NAME_IO)
         create_json_file(UserTree)
     except Exception as e:
-        print("ОШИБКА: генерация трендов провалилась:", e)
+        print("ОШИБКА: генерация пользовательских трендов провалилась:", e)
 
 
 def generateOpcMap():
@@ -19,4 +19,4 @@ def generateOpcMap():
         key_name_json = "shitty_wizard"
         process_excel_file(EXCEL_NAME_OPC, key_name_json)
     except Exception as e:
-        print("ОШИБКА: генерация OPC провалилась:", e)
+        print("ОШИБКА: генерация OPC-карты провалилась:", e)

@@ -17,7 +17,7 @@ def create_json_file(signals):
     if os.path.exists(file_path):
         print(f"Файл успешно создан по пути: {file_path}")
     else:
-        print("Возникла проблема при создании файла")
+        print(f"Не удалось создать файл {file_path}")
 
 
 # Создать массив с настройками по каждому листу из Config.json для трендов
@@ -46,7 +46,7 @@ def read_settings():
 # Вернуть значения из config.json по названию ключа
 def get_data_from_config(data):
     try:
-        with open(Const.FILE_PATH + Const.CONFIG_NAME, 'r' , encoding='utf-8') as config_file:
+        with open(Const.FILE_PATH + Const.CONFIG_NAME, 'r', encoding='utf-8') as config_file:
             config_content = config_file.read()
             config_dict = json.loads(config_content)
         return config_dict[data]

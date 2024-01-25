@@ -48,20 +48,19 @@ def process_excel_file(excel_name_opc, key_name):
         sheet.cell(row=row_number, column=5, value=govno_ADDRESS)
         sheet.cell(row=row_number, column=6, value=govno_TYPE)
         for pattern, replacement in config.items():
-            parts = pattern.split("_TAG")
+            parts = pattern.split(Const.PATTERN_TAG_OPC)
             if len(parts) == 2 and a_value.startswith(parts[0]) and a_value.endswith(parts[1]):
                 tag = a_value.replace(parts[0], "").replace(parts[1], "")
-                new_value = replacement.replace("_TAG", tag)
-
+                new_value = replacement.replace(Const.PATTERN_TAG_OPC, tag)
                 sheet.cell(row=row_number, column=7, value=new_value)
                 break
 
-    if not os.path.exists('Output'):
-        os.makedirs('Output')
+    if not os.path.exists(Const.OUTPUT_FOLDER):
+        os.makedirs(Const.OUTPUT_FOLDER)
     wb.save(output_file_path)
 
     output_file_absolute_path = os.path.abspath(output_file_path)
     if os.path.exists(output_file_path):
         print(f"Файл успешно создан по пути: {output_file_absolute_path}")
     else:
-        print("Не удалось создать файл")
+        print(f"Не удалось создать файл {output_file_absolute_path}")
