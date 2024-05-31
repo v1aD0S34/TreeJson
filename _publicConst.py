@@ -7,5 +7,5 @@ class Const:
     OUTPUT_FOLDER = "Output\\"
     CONFIG_NAME = "config.json"
     OUTPUT_JSON_NAME = "Tree_JSON"
-    PATTERN_TAG_OPC = "_TAG"
+
 
