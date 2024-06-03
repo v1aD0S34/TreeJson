@@ -49,6 +49,9 @@ def process_excel_file(excel_name_opc, key_name):
         a_value = sheet.cell(row=row_number, column=1).value
         if a_value:
             new_value = process_tag_value(a_value, config, prefix_Alpha, prefix_Regul)
+            if config[0].get("IsArray", False):
+                new_value, massIndex = check_string_with_number("new_value")
+                sheet.cell(row=row_number, column=8, value=massIndex)
             sheet.cell(row=row_number, column=7, value=new_value)
         sheet.cell(row=row_number, column=4, value=govno_BINDING)
         sheet.cell(row=row_number, column=5, value=govno_ADDRESS)
@@ -65,36 +68,19 @@ def process_excel_file(excel_name_opc, key_name):
         print(f"Не удалось создать файл {output_file_absolute_path}")
 
 
-# def process_tag_value(tag_value, config, prefix_Alpha, prefix_Regul):
-#     for template in config:
-#         if (tag_value.startswith(prefix_Alpha + template["BeforeTag_StructAlpha"]) and
-#                 any(tag_value.endswith(signal) for signal in template["AfterTag_SignalAlpha"])):
-#             # Убираем начало и префикс
-#             tag = tag_value[len(prefix_Alpha + template["BeforeTag_StructAlpha"]):]
-#             # Находим конец
-#             before_signal_alpha = next(signal for signal in template["AfterTag_SignalAlpha"] if tag.endswith(signal))
-#             tag = tag[: -len(before_signal_alpha)]  # Убираем конец
-#             # Получаем индекс совпавшего сигнала
-#             signal_index = template["AfterTag_SignalAlpha"].index(before_signal_alpha)
-#             # Собираем новое значение с новыми префиксами и частями шаблона
-#             new_value = (prefix_Regul + template["BeforeTag_StructRegul"] +
-#                          template["BeforeTag_SignalRegul"][0] + tag +
-#                          template["AfterTag_SignalRegul"][signal_index])
-#
-#             return new_value
-#
-#     return "ХЗ"  # Возвращаем оригинальное значение, если шаблон не найден
-
-
 def process_tag_value(tag_value, config, prefix_Alpha, prefix_Regul):
     for template in config:
         if (tag_value.startswith(prefix_Alpha + template["BeforeTag_StructAlpha"]) and
                 any(tag_value.endswith(signal) for signal in template["AfterTag_SignalAlpha"])):
             # Убираем начало и префикс
             tag = tag_value[len(prefix_Alpha + template["BeforeTag_StructAlpha"]):]
+
             # Находим конец
             before_signal_alpha = next(signal for signal in template["AfterTag_SignalAlpha"] if tag.endswith(signal))
-            tag = tag[: -len(before_signal_alpha)]  # Убираем конец
+
+            # tag = tag[: -len(before_signal_alpha)]  # Убираем конец
+            tag = tag if len(before_signal_alpha) == 0 else tag[: -len(before_signal_alpha)]
+
             # Получаем индекс совпавшего сигнала
             signal_index = template["AfterTag_SignalAlpha"].index(before_signal_alpha)
 
@@ -111,6 +97,25 @@ def process_tag_value(tag_value, config, prefix_Alpha, prefix_Regul):
 
             return new_value
 
-    return "ХЗ"  # Возвращаем оригинальное значение, если шаблон не найден
+    return "ХЗ"
 
 
+def check_string_with_number(input_string):
+    # Проверяем, заканчивается ли строка на число
+    if input_string[-1].isdigit():
+        # Находим индекс последней цифры
+        for i in range(len(input_string) - 1, -1, -1):
+            if not input_string[i].isdigit():
+                break
+        # Извлекаем число
+        number = int(input_string[i + 1:])
+
+        # Проверяем, есть ли точка перед числом
+        if input_string[i] == '.':
+            return input_string[:i], number
+        else:
+            return input_string, number
+    else:
+        # return input_string, ""
+        return input_string, 0 if any(
+            key in input_string for key in ["StrStep", "StrColor", "StrText"]) else "хуйхуйхуйхуй"

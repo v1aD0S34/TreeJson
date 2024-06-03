@@ -1,6 +1,6 @@
 {
   "nameFile_IO": "IO_alpha_CONFIGURATOR_v6.xlsm",
-  "prefix_Alpha": "GVL",
+  "prefix_Alpha": "AlgGVL",
   "excel_settings_IO": [
     {
       "Name": "AI",
@@ -104,28 +104,6 @@
       "AfterTag_SignalRegul": ["forsPermit","forsEnable","DRV","permit"]
     },
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       "BeforeTag_StructAlpha": "AI.",
       "AfterTag_StructAlpha": "AI_ToHMI.",
@@ -138,7 +116,435 @@
       "AfterTag_SignalRegul": ["fault_common", "break","up_scale","ROC","settingErr","manual",
         "repair","repair_time_less_10_percent","as","os","ps","criticalFault","down_scale",
         "CurrentTimeOfRepair","PV","measure","imitTarget","PV_str","measure_str","RAW_str","permit"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AI.",
+      "AfterTag_StructAlpha": "AI_FromHMI.",
+      "AfterTag_SignalAlpha": ["BTNmanualOn","BTNrepairOn","BTNworkOn","BTNrepairProlong","manualTarget"],
+
+      "BeforeTag_StructRegul": "AI_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["BTNmanualOn","BTNrepairOn","BTNworkOn","BTNrepairProlong","manualTarget"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AI.",
+      "AfterTag_StructAlpha": "AI_Setting.",
+      "AfterTag_SignalAlpha": ["repairTime", "min_PV", "max_PV", "hiLim", "loLim",
+        "hiBrk", "loBrk", "minADC", "maxADC", "maxROC", "recoveryTime", "tau"],
+
+      "BeforeTag_StructRegul": "AI_Settings.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul":["repairTime", "min_PV", "max_PV", "hiLim", "loLim",
+        "hiBrk", "loBrk", "minADC", "maxADC", "maxROC", "recoveryTime", "tau"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AI.",
+      "AfterTag_StructAlpha": "AI_Setting_FromHMI.",
+      "AfterTag_SignalAlpha": ["repairTime", "min_PV", "max_PV", "hiLim", "loLim",
+        "hiBrk", "loBrk", "minADC", "maxADC", "maxROC", "recoveryTime", "tau"],
+
+      "BeforeTag_StructRegul": "AI_Settings.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul":["repairTime", "min_PV", "max_PV", "hiLim", "loLim",
+        "hiBrk", "loBrk", "minADC", "maxADC", "maxROC", "recoveryTime", "tau"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AO.",
+      "AfterTag_StructAlpha": "AO_FromHMI.",
+      "AfterTag_SignalAlpha": ["BTNforceOn","BTNworkOn","manualTarget"],
+
+      "BeforeTag_StructRegul": "AO_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul":["BTNforceOn","BTNworkOn","manualTarget"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AO.",
+      "AfterTag_StructAlpha": "AO_ToHMI.",
+      "AfterTag_SignalAlpha": ["forsPermit","forsEnable","PV","permit","DRV"],
+
+      "BeforeTag_StructRegul": "AO_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["forsPermit","forsEnable","PV","permit","DRV"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AO.",
+      "AfterTag_StructAlpha": "AO_Setting.",
+      "AfterTag_SignalAlpha": ["min_PV","max_PV","minDAC","maxDAC"],
+
+      "BeforeTag_StructRegul": "AO_Setting.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["min_PV","max_PV","minDAC","maxDAC"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AO.",
+      "AfterTag_StructAlpha": "AO_Setting_FromHMI.",
+      "AfterTag_SignalAlpha": ["min_PV","max_PV","minDAC","maxDAC"],
+
+      "BeforeTag_StructRegul": "AO_Settings.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["min_PV","max_PV","minDAC","maxDAC"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AM_ToHMI.",
+      "AfterTag_SignalAlpha": ["iOn","iOff","qOn","qOff","qHoldOn","iCon",
+        "iCoff","modeManual","disableManual","prmBtnOn","prmBtnOff","fNotOn","fNotOff","fNotStart","fSelfOn",
+        "fSelfOff","fCon","fCoff","fFB","dist","fCommon","disableCon","disableCoff"],
+
+      "BeforeTag_StructRegul": "AM_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["iOn","iOff","qOn","qOff","qHoldOn","iCon",
+        "iCoff","modeManual","disableManual","prmBtnOn","prmBtnOff","fNotOn","fNotOff","fNotStart","fSelfOn",
+        "fSelfOff","fCon","fCoff","fFB","dist","fCommon","disableCon","disableCoff"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AM_FromHMI.",
+      "AfterTag_SignalAlpha": ["btnOn","btnOff","btnManualOn","btnManualOff"],
+
+      "BeforeTag_StructRegul": "AM_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["btnOn","btnOff","btnManualOn","btnManualOff"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AM_Alg.",
+      "AfterTag_SignalAlpha": ["AlgOn","AlgOff"],
+
+      "BeforeTag_StructRegul": "AM_Alg.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["AlgOn","AlgOff"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AnAM_Alg.",
+      "AfterTag_SignalAlpha": ["pos"],
+
+      "BeforeTag_StructRegul": "AnAM_Alg.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["pos"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AnAM_ToHMI.",
+      "AfterTag_SignalAlpha": ["iPos","iCpos","qPos","manualPos","dCpos","dPos"],
+
+      "BeforeTag_StructRegul": "AnAM_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["iPos","iCpos","qPos","manualPos","dCpos","dPos"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AM.",
+      "AfterTag_StructAlpha": "AnAM_FromHMI.",
+      "AfterTag_SignalAlpha": ["manualPos"],
+
+      "BeforeTag_StructRegul": "AnAM_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["manualPos"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Calc_AI.",
+      "AfterTag_StructAlpha": "Calc_AI_To_HMI.",
+      "AfterTag_SignalAlpha": ["as","fault","os","ps","PV"],
+
+      "BeforeTag_StructRegul": "CalcPar.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["as","fault","os","ps","PV"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Calc_AI.",
+      "AfterTag_StructAlpha": "Calc_AI_From_HMI.",
+      "AfterTag_SignalAlpha": ["as","fault","os","ps","PV"],
+
+      "BeforeTag_StructRegul": "CalcPar.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["as","fault","os","ps","PV"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "UniteState.US.",
+      "AfterTag_StructAlpha": ".",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "us.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "BTN.",
+      "AfterTag_StructAlpha": ".",
+      "AfterTag_SignalAlpha": ["Btn","PRM"],
+
+      "BeforeTag_StructRegul": "BTN.",
+      "BeforeTag_SignalRegul": ["Btn","PRM_BTN"],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.AObs.Ab.",
+      "AfterTag_StructAlpha": ".",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.AOss.As.",
+      "AfterTag_StructAlpha": ".",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_DI.",
+      "AfterTag_SignalAlpha": ["PV"],
+
+      "BeforeTag_StructRegul": "DI_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["PV"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_DI.",
+      "AfterTag_SignalAlpha": ["AS"],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "TMR.GPA_TMR.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "TMR.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.TS.TS.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "TS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Diagn.IHE.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "IHE.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.PS.PS.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "PS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.Ust.UstFromHMI.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Ust.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.Ust.UstToHMI.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Ust.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "APS.PPU.HR.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "PPU.HR.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+    {
+      "BeforeTag_StructAlpha": "APS.NOss.Ns.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+
+
+    {
+      "BeforeTag_StructAlpha": "DLT.GPA_TMR.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "DLT.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+
+    {
+      "BeforeTag_StructAlpha": "Protects.Q_ON.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Q_ON.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Set_UPR.Set_UPR.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Set_UPR.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AlgoStep.StrColor.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Alg_visualization.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AlgoStep.StrStep.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Alg_visualization.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AlgoStep.StrText.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Alg_visualization.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.Counters.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.Counters.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.RP_GTU_IN.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.RP_GTU_IN.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.RP_GTU_IN_FromHMI.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.RP_GTU_IN.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.RP_GTU_OUT.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.RP_GTU_OUT.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.RTG_IN.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.RTG_IN.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "Statistic.RTG_OUT.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "Statistic.RTG_OUT.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
     }
+
+
 
   ]
 }
