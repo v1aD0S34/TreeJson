@@ -48,14 +48,17 @@ def process_excel_file(excel_name_opc, key_name):
     for row_number in range(2, last_row + 1):
         a_value = sheet.cell(row=row_number, column=1).value
         if a_value:
-            new_value = process_tag_value(a_value, config, prefix_Alpha, prefix_Regul)
-            if config[0].get("IsArray", False):
-                new_value, massIndex = check_string_with_number("new_value")
-                sheet.cell(row=row_number, column=8, value=massIndex)
+            new_value, massIndex = process_tag_value(a_value, config, prefix_Alpha, prefix_Regul)
             sheet.cell(row=row_number, column=7, value=new_value)
-        sheet.cell(row=row_number, column=4, value=govno_BINDING)
-        sheet.cell(row=row_number, column=5, value=govno_ADDRESS)
-        sheet.cell(row=row_number, column=6, value=govno_TYPE)
+            sheet.cell(row=row_number, column=8, value=massIndex)
+            if new_value != "":
+                sheet.cell(row=row_number, column=4, value=govno_BINDING)
+                sheet.cell(row=row_number, column=5, value=govno_ADDRESS)
+                sheet.cell(row=row_number, column=6, value=govno_TYPE)
+            else:
+                sheet.cell(row=row_number, column=4, value="не привязан")
+                sheet.cell(row=row_number, column=5, value="")
+                sheet.cell(row=row_number, column=6, value="")
 
     if not os.path.exists(Const.OUTPUT_FOLDER):
         os.makedirs(Const.OUTPUT_FOLDER)
@@ -70,17 +73,22 @@ def process_excel_file(excel_name_opc, key_name):
 
 def process_tag_value(tag_value, config, prefix_Alpha, prefix_Regul):
     for template in config:
-        if (tag_value.startswith(prefix_Alpha + template["BeforeTag_StructAlpha"]) and
-                any(tag_value.endswith(signal) for signal in template["AfterTag_SignalAlpha"])):
+        if (tag_value.startswith(prefix_Alpha + template["BeforeTag_StructAlpha"])
+                and
+                any(tag_value.endswith(signal) for signal in template["AfterTag_SignalAlpha"])
+                and
+                template["AfterTag_StructAlpha"] in tag_value):
+
             # Убираем начало и префикс
             tag = tag_value[len(prefix_Alpha + template["BeforeTag_StructAlpha"]):]
 
             # Находим конец
             before_signal_alpha = next(signal for signal in template["AfterTag_SignalAlpha"] if tag.endswith(signal))
 
-            # tag = tag[: -len(before_signal_alpha)]  # Убираем конец
-            tag = tag if len(before_signal_alpha) == 0 else tag[: -len(before_signal_alpha)]
-
+            # tag = tag[: -len(before_signal_alpha)]  # Убираем коне
+            tag = ((tag if len(before_signal_alpha) == 0 else tag[: -len(before_signal_alpha)])
+                   .replace(template["AfterTag_StructAlpha"], ""))
+            # tag = tag.translate(str.maketrans("", "", template["AfterTag_StructAlpha"]))
             # Получаем индекс совпавшего сигнала
             signal_index = template["AfterTag_SignalAlpha"].index(before_signal_alpha)
 
@@ -94,10 +102,13 @@ def process_tag_value(tag_value, config, prefix_Alpha, prefix_Regul):
             new_value = (prefix_Regul + template["BeforeTag_StructRegul"] +
                          template["BeforeTag_SignalRegul"][before_signal_regul_index] + tag +
                          template["AfterTag_SignalRegul"][after_signal_regul_index])
+            massIndex = ""
+            if template.get("IsArray", False):
+                new_value, massIndex = check_string_with_number(new_value)
+                # sheet.cell(row=row_number, column=8, value=massIndex)
+            return new_value[: -1] if new_value.endswith('.') else new_value, massIndex
 
-            return new_value
-
-    return "ХЗ"
+    return "", ""
 
 
 def check_string_with_number(input_string):
@@ -109,13 +120,13 @@ def check_string_with_number(input_string):
                 break
         # Извлекаем число
         number = int(input_string[i + 1:])
-
         # Проверяем, есть ли точка перед числом
-        if input_string[i] == '.':
-            return input_string[:i], number
-        else:
-            return input_string, number
+        # if input_string[i] == '.':
+        #     return input_string[:i], number
+        # else:
+        #     return input_string, number
+        return input_string[: i + 1], number
     else:
         # return input_string, ""
         return input_string, 0 if any(
-            key in input_string for key in ["StrStep", "StrColor", "StrText"]) else "хуйхуйхуйхуй"
+            key in input_string for key in ["StrStep", "StrColor", "StrText"]) else ""
