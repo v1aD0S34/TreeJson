@@ -1,4 +1,5 @@
 import warnings
+
 from generation import generateTrends, generateOpcMap
 
 if __name__ == "__main__":
