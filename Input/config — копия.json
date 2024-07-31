@@ -1,5 +1,5 @@
 {
-  "nameFile_IO": "IO_KC_Purovskay_ALPHA_30_07_24.xlsx",
+  "nameFile_IO": "IO_alpha_CONFIGURATOR_v6.xlsm",
   "prefix_Alpha": "AlgGVL",
   "excel_settings_IO": [
     {
@@ -16,7 +16,7 @@
       "Name": "AO",
       "ExcelSheet": "AO1",
       "TreePath": "AO\\",
-      "Tag": "R",
+      "Tag": "P",
       "Unit": "I",
       "Description": "F",
       "Postfix_Alpha": "AO_ToHMI.PV",
@@ -59,7 +59,7 @@
   "binding_OpcMap": "непосредственно",
   "addressSpace_OpcMap": "urn:ProsoftSystems:regul_ua_server:iec_data",
   "typeId_OpcMap": "Строковый",
-  "prefix_Regul": "Application.AlgGVL",
+  "prefix_Regul": "Application.algGVL",
 
   "shitty_wizard": [
     {
@@ -575,29 +575,9 @@
       "BeforeTag_SignalRegul": [""],
       "AfterTag_SignalRegul": [""]
     },
-
-        {
-      "BeforeTag_StructAlpha": "APS.HR.",
-      "AfterTag_StructAlpha": "",
-      "AfterTag_SignalAlpha": [""],
-
-      "BeforeTag_StructRegul": "PPU_HR.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
-
+    
     {
       "BeforeTag_StructAlpha": "APS.PPU.GR.",
-      "AfterTag_StructAlpha": "",
-      "AfterTag_SignalAlpha": [""],
-
-      "BeforeTag_StructRegul": "PPU.GR.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
-
-     {
-      "BeforeTag_StructAlpha": "APS.GR.",
       "AfterTag_StructAlpha": "",
       "AfterTag_SignalAlpha": [""],
 
@@ -628,26 +608,6 @@
 
     {
       "BeforeTag_StructAlpha": "APS.NOss.Ns.",
-      "AfterTag_StructAlpha": "",
-      "AfterTag_SignalAlpha": [""],
-
-      "BeforeTag_StructRegul": "AS.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
-
-     {
-      "BeforeTag_StructAlpha": "APS.First_event.first_event.",
-      "AfterTag_StructAlpha": "",
-      "AfterTag_SignalAlpha": [""],
-
-      "BeforeTag_StructRegul": "AS.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
-
-    {
-      "BeforeTag_StructAlpha": "APS.First_event.first_event_bool.",
       "AfterTag_StructAlpha": "",
       "AfterTag_SignalAlpha": [""],
 
