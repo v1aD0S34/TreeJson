@@ -1,5 +1,5 @@
 {
-  "nameFile_IO": "IO_KC_Purovskay_ALPHA_30_07_24.xlsx",
+  "nameFile_IO": "IO_KC_Purovskay_ALPHA_31_07_24.xlsx",
   "prefix_Alpha": "AlgGVL",
   "excel_settings_IO": [
     {
@@ -226,6 +226,70 @@
       "AfterTag_SignalRegul": ["AlgOn","AlgOff"]
     },
 
+
+    {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AM_ToHMI.",
+      "AfterTag_SignalAlpha": ["iOn","iOff","qOn","qOff","qHoldOn","iCon",
+        "iCoff","modeManual","disableManual","prmBtnOn","prmBtnOff","fNotOn","fNotOff","fNotStart","fSelfOn",
+        "fSelfOff","fCon","fCoff","fFB","dist","fCommon","disableCon","disableCoff"],
+
+      "BeforeTag_StructRegul": "AM_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["iOn","iOff","qOn","qOff","qHoldOn","iCon",
+        "iCoff","modeManual","disableManual","prmBtnOn","prmBtnOff","fNotOn","fNotOff","fNotStart","fSelfOn",
+        "fSelfOff","fCon","fCoff","fFB","dist","fCommon","disableCon","disableCoff"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AM_FromHMI.",
+      "AfterTag_SignalAlpha": ["btnOn","btnOff","btnManualOn","btnManualOff"],
+
+      "BeforeTag_StructRegul": "AM_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["btnOn","btnOff","btnManualOn","btnManualOff"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AM_Alg.",
+      "AfterTag_SignalAlpha": ["AlgOn","AlgOff"],
+
+      "BeforeTag_StructRegul": "AM_Alg.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["AlgOn","AlgOff"]
+    },
+
+   {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AnAM_Alg.",
+      "AfterTag_SignalAlpha": ["pos"],
+
+      "BeforeTag_StructRegul": "AM_Alg.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["pos"]
+    },
+
+    {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AnAM_ToHMI.",
+      "AfterTag_SignalAlpha": ["iPos","iCpos","qPos","manualPos","dCpos","dPos"],
+
+      "BeforeTag_StructRegul": "AM_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["iPos","iCpos","qPos","manualPos","dCpos","dPos"]
+    },
+   {
+      "BeforeTag_StructAlpha": "AnAM.",
+      "AfterTag_StructAlpha": "AnAM_FromHMI.",
+      "AfterTag_SignalAlpha": ["manualPos"],
+
+      "BeforeTag_StructRegul": "AM_FromHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["manualPos"]
+    },
+
     {
       "BeforeTag_StructAlpha": "AM.",
       "AfterTag_StructAlpha": "AnAM_Alg.",
@@ -336,6 +400,73 @@
       "AfterTag_SignalRegul": ["PV"]
     },
 
+    {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_Calc_AI.",
+      "AfterTag_SignalAlpha": ["PV"],
+
+      "BeforeTag_StructRegul": "CalcPar.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["PV"]
+    },
+
+
+
+    {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_AI.",
+      "AfterTag_SignalAlpha": ["PV"],
+
+      "BeforeTag_StructRegul": "AI_ToHMI.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": ["PV"]
+    },
+
+
+
+    {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_DI.",
+      "AfterTag_SignalAlpha": ["AS"],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+     {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_Calc_AI.",
+      "AfterTag_SignalAlpha": ["AS"],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+ {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_LG.",
+      "AfterTag_SignalAlpha": ["AS"],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+     {
+      "BeforeTag_StructAlpha": "APS.PPZ.",
+      "AfterTag_StructAlpha": "PPZ_Alarm_AI.",
+      "AfterTag_SignalAlpha": ["AS"],
+
+      "BeforeTag_StructRegul": "AS.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+    },
+
+
+
+
+
      {
       "BeforeTag_StructAlpha": "APS.PPZ.",
       "AfterTag_StructAlpha": "PPZ_State_DI.",
@@ -404,37 +535,6 @@
       },
 
 
-
-
-    {
-      "BeforeTag_StructAlpha": "APS.PPZ.",
-      "AfterTag_StructAlpha": "PPZ_Alarm_AI.",
-      "AfterTag_SignalAlpha": ["PV"],
-
-      "BeforeTag_StructRegul": "AI_ToHMI.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": ["PV"]
-    },
-
-    {
-      "BeforeTag_StructAlpha": "APS.PPZ.",
-      "AfterTag_StructAlpha": "PPZ_Alarm_DI.",
-      "AfterTag_SignalAlpha": ["AS"],
-
-      "BeforeTag_StructRegul": "AS.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
-
-     {
-      "BeforeTag_StructAlpha": "APS.PPZ.",
-      "AfterTag_StructAlpha": "PPZ_Alarm_AI.",
-      "AfterTag_SignalAlpha": ["AS"],
-
-      "BeforeTag_StructRegul": "AS.",
-      "BeforeTag_SignalRegul": [""],
-      "AfterTag_SignalRegul": [""]
-    },
 
      {
       "BeforeTag_StructAlpha": "APS.PPZ.",
@@ -577,7 +677,7 @@
     },
 
         {
-      "BeforeTag_StructAlpha": "APS.HR.",
+      "BeforeTag_StructAlpha": "APS.HR.HR",
       "AfterTag_StructAlpha": "",
       "AfterTag_SignalAlpha": [""],
 
@@ -591,7 +691,7 @@
       "AfterTag_StructAlpha": "",
       "AfterTag_SignalAlpha": [""],
 
-      "BeforeTag_StructRegul": "PPU.GR.",
+      "BeforeTag_StructRegul": "PPU.GR.GR.",
       "BeforeTag_SignalRegul": [""],
       "AfterTag_SignalRegul": [""]
     },
@@ -751,6 +851,8 @@
       "IsArray" : true
     },
 
+
+
     {
       "BeforeTag_StructAlpha": "Statistic.RP_GTU_IN_FromHMI.",
       "AfterTag_StructAlpha": "",
@@ -761,6 +863,31 @@
       "AfterTag_SignalRegul": [""],
       "IsArray" : true
     },
+
+    {
+      "BeforeTag_StructAlpha": "RK.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "FR.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""],
+      "IsArray" : true
+    },
+    {
+      "BeforeTag_StructAlpha": "RK.FR.",
+      "AfterTag_StructAlpha": "",
+      "AfterTag_SignalAlpha": [""],
+
+      "BeforeTag_StructRegul": "FR.",
+      "BeforeTag_SignalRegul": [""],
+      "AfterTag_SignalRegul": [""]
+
+    },
+
+
+
+
 
     {
       "BeforeTag_StructAlpha": "Statistic.RP_GTU_OUT.",
